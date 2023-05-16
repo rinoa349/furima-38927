@@ -20,14 +20,14 @@ has_many :orders
 
 ## destinations テーブル
 
-| Column           | Type   | Options                               |
-| ---------------- | ------ | ------------------------------------- |
-| post_code        | string | null: false                           |
-| prefecture       | integer| null: false, :item, foreign_key: true |
-| city             | string | null: false                           |
-| adress           | string | null: false                           |
-| building_name    | string |                                       |
-| phone_number     | string | null: false                           |
+| Column           | Type       | Options                               |
+| ---------------- | ---------- | ------------------------------------- |
+| post_code        | string     | null: false                           |
+| city             | string     | null: false                           |
+| adress           | string     | null: false                           |
+| building_name    | string     |                                       |
+| phone_number     | string     | null: false                           |
+| order            | references | null: false foreign_key: true |
 
 ### Association
 
