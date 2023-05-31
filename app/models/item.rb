@@ -14,7 +14,6 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :user_id
     validates :name
     validates :description
     validates :item_status_id
@@ -23,8 +22,8 @@ class Item < ApplicationRecord
     validates :shipping_cost_id
     validates :shipping_date_id
     #300円同等か以上、9,999,999円同等か以下
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 
-    }, format: { with: /\A[0-9]+\z/ }
+    validates :price, format: { with: /\A[0-9]+\z/}, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 
+    }
   end
   #ジャンルの選択が「---」の時は保存できないようにする
   with_options numericality: { other_than: 1 , message:"can't be blank" } do
