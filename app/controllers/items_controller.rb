@@ -16,11 +16,16 @@ class ItemsController < ApplicationController
    else
     render :new
    end
-
+  end
+  
    def show
    end
 
    def edit
+    if @item.user_id == current_user.id
+    else
+      redirect_to root_path
+    end
    end
 
    def update
@@ -33,7 +38,6 @@ class ItemsController < ApplicationController
    end
 
    
-  end
 
   private
   def item_params
