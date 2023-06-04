@@ -130,7 +130,7 @@
 
       <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to item_path(item) do %>
         <div class='item-img-content'>
         <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %>
 
@@ -161,7 +161,7 @@
       <%# 商品がある場合は表示 %>
       <% if @items.length == 0 %>
         <li class='list'>
-        <%= link_to '#' do %>
+        <%= link_to item_path(item) do %>
           <%= image_tag "dog.test.jpeg", class: "item-img" %>
           <div class='item-info'>
             <h3 class='item-name'>
