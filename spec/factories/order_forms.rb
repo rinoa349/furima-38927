@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :order_form do
-    user_id       {Faker::Number.non_zero_digit}
-    item_id       {Faker::Number.non_zero_digit}
+    
     post_code     {1234567.to_s.insert(3, "-")}
     prefecture_id {Faker::Number.between(from:2, to: 48)}
     city          {Faker::Address.city}
