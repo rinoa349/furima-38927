@@ -42,6 +42,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+gem 'mail', '2.7.1'
+
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
